@@ -432,7 +432,7 @@ git add .
 git commit -m "Document Azure VM deployment using Azure CLI"
 
 # Add remote repository
-git remote add origin <github-repository-url>
+git remote add origin https://github.com/samueleze1/-Global-Retail-Azure-Infrastructure-Deployment-Using-Azure-CLI.git
 
 # Rename branch
 git branch -M main
