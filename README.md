@@ -1,6 +1,6 @@
-# ☁️ Global Retail Azure Infrastructure Deployment Using Azure CLI
+#  Global Retail Azure Infrastructure Deployment Using Azure CLI
 
-## 📋 Project Overview
+##  Project Overview
 
 This project demonstrates the deployment and configuration of a complete Azure infrastructure environment using Azure CLI.
 
@@ -19,7 +19,7 @@ All resources were deployed and managed using Azure CLI.
 
 ---
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 ```
 Azure Subscription
@@ -40,7 +40,7 @@ Azure Subscription
 
 ---
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - Microsoft Azure
 - Azure CLI
@@ -58,7 +58,7 @@ Azure Subscription
 
 ---
 
-## 📦 Azure Resources Created
+##  Azure Resources Created
 
 ```
 Azure Subscription
@@ -76,9 +76,9 @@ Azure Subscription
 
 ---
 
-## 🚧 Deployment Process
+##  Deployment Process
 
-### 📁 Phase 1 — Resource Group Creation
+###  Phase 1 — Resource Group Creation
 
 A dedicated Azure Resource Group was created to logically organize all infrastructure resources.
 
@@ -92,7 +92,7 @@ az group create --name rg-globalretail-prod-002 --location eastus
 
 ---
 
-### 🌐 Phase 2 — Virtual Network and Subnet Deployment
+###  Phase 2 — Virtual Network and Subnet Deployment
 
 A Virtual Network and subnet were created to provide private communication between Azure resources.
 
@@ -121,7 +121,7 @@ az network vnet create `
 
 ---
 
-### 🐧 Phase 3 — Linux Virtual Machine Deployment
+###  Phase 3 — Linux Virtual Machine Deployment
 
 An Ubuntu Server 22.04 LTS virtual machine was deployed.
 
@@ -150,7 +150,7 @@ az vm list --output table
 
 ---
 
-### 🪟 Phase 4 — Windows Server Deployment
+###  Phase 4 — Windows Server Deployment
 
 Windows Server 2022 was deployed.
 
@@ -181,7 +181,7 @@ az vm create `
 
 ---
 
-### 🔑 Phase 5 — Windows Server RDP Access
+###  Phase 5 — Windows Server RDP Access
 
 Remote Desktop Protocol (RDP) was enabled for Windows administration.
 
@@ -195,7 +195,7 @@ az vm open-port --resource-group rg-globalretail-prod-002 --name vm-win-srv-01 -
 
 ---
 
-### 🌍 Phase 6 — IIS Installation
+###  Phase 6 — IIS Installation
 
 After connecting through Remote Desktop, IIS was installed using Windows PowerShell.
 
@@ -216,7 +216,7 @@ Exit Code: Success
 
 ---
 
-### 🔓 Phase 7 — Windows HTTP Access
+###  Phase 7 — Windows HTTP Access
 
 An inbound HTTP rule was created to allow web traffic.
 
@@ -230,7 +230,7 @@ az network nsg rule create --resource-group rg-globalretail-prod-002 --nsg-name 
 
 ---
 
-### ✅ Phase 8 — IIS Website Validation
+###  Phase 8 — IIS Website Validation
 
 The IIS webpage was accessed through the public IP address.
 
@@ -241,7 +241,7 @@ Result: IIS Welcome Page displayed successfully.
 ![IIS webpage validation](screenshots/08-iis-webpage.png)
 
 ---
-## 🖥️ Phase 9 — Windows 11 VM Deployment in an Availability Zone
+##  Phase 9 — Windows 11 VM Deployment in an Availability Zone
 
 A Windows 11 Pro virtual machine was deployed in **Availability Zone 3** to improve resilience and provide protection against datacenter-level failures within the Azure East US region.
 
@@ -277,7 +277,7 @@ az vm create `
 
 
 ---
-### 🖥️ Phase 10 — WVerify Availability Zone
+###  Phase 10 — WVerify Availability Zone
 
 
 
@@ -307,7 +307,7 @@ az vm show `
 
 **Availability Zone verification showing the Windows 11 VM deployed in Zone 3.**
 
-### 🔐 Phase 11a — Network Security Configuration
+###  Phase 11a — Network Security Configuration
 
 The default Network Security Group (NSG) rule for the Linux virtual machine was verified to confirm that SSH access (port 22) was enabled.
 
@@ -319,7 +319,7 @@ az network nsg rule list `
   --nsg-name vm-linux-web-01NSG `
   --output table
 ```
-📷 **Screenshot:** `screenshots/11a-linux-nsg-rules.png`
+ **Screenshot:** `screenshots/11a-linux-nsg-rules.png`
 
 ![Linux NSG Rules](screenshots/11a-linux-nsg-rules.png)
 
@@ -329,7 +329,7 @@ az network nsg rule list `
 
 **Default NSG rule allowing inbound SSH (TCP port 22) to the Linux virtual machine.**
 
-### 🔐 Phase 11b — Linux SSH Connection
+###  Phase 11b — Linux SSH Connection
 
 Linux administration was performed using SSH.
 
@@ -356,7 +356,7 @@ ssh azureuser@52.177.223.112
 
 ---
 
-### ⚙️ Phase 12 — Nginx Installation
+###  Phase 12 — Nginx Installation
 
 Package repositories were updated:
 
@@ -386,7 +386,7 @@ Active: active (running)
 
 ---
 
-### ✅ Phase 13 — Nginx Web Validation
+###  Phase 13 — Nginx Web Validation
 
 HTTP access was enabled:
 
@@ -402,7 +402,7 @@ Result: `Welcome to nginx!`
 
 ---
 
-## 🐞 Troubleshooting Summary
+##  Troubleshooting Summary
 
 | **Issue**                        | **Problem**                                                                                                 | **Solution**                                                                                               |
 | -------------------------------- | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -414,7 +414,7 @@ Result: `Welcome to nginx!`
 
 ---
 
-## 🐙 GitHub Version Control Process
+##  GitHub Version Control Process
 
 The project documentation was stored in GitHub for version control and portfolio presentation.
 
@@ -443,7 +443,7 @@ git push -u origin main
 
 ---
 
-## 🧹 Resource Cleanup
+##  Resource Cleanup
 
 Resources have not yet been deleted because they are still required for validation, screenshots, and documentation.
 
@@ -467,7 +467,7 @@ This removes:
 
 ---
 
-## 🎓 Lessons Learned
+##  Lessons Learned
 
 This project provided practical experience with:
 
@@ -485,7 +485,7 @@ This project provided practical experience with:
 
 ---
 
-## 🏁 Conclusion
+##  Conclusion
 
 This project successfully demonstrated the deployment of a complete Azure infrastructure environment using Azure CLI.
 
